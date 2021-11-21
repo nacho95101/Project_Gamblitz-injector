@@ -115,17 +115,17 @@ int main(int argc, char **argv)
             switch (cursor)
             {
             case UP_AMS:
-                if (yesNoBox(cursor, 390, 250, "Update Atmosphere?") == YES)
+                if (yesNoBox(cursor, 390, 250, "Install EUR?") == YES)
                     update_ams_hekate(AMS_URL, AMS_OUTPUT, cursor);
                 break;
 
             case UP_AMS_NOINI:
-                if (yesNoBox(cursor, 390, 250, "Update Atmosphere\n(ignoring .ini files)?") == YES)
+                if (yesNoBox(cursor, 390, 250, "Install JP?") == YES)
                     update_ams_hekate(AMS_URL, AMS_OUTPUT, cursor);
                 break;
 
             case UP_HEKATE:
-                if (yesNoBox(cursor, 390, 250, "Update Hekate?") == YES)
+                if (yesNoBox(cursor, 390, 250, "Install US?") == YES)
                     update_ams_hekate(HEKATE_URL, HEKATE_OUTPUT, cursor);
                 break;
 

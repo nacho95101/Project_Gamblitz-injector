@@ -14,16 +14,8 @@ void refreshScreen(char loaded)
     // app version.
     drawText(fntMedium, 40, 40, SDL_GetColour(white), APP_VERSION);
 
-    // system version.
-    drawText(fntSmall, 25, 150, SDL_GetColour(white), getSysVersion());
-
-    // atmosphere version.
-    drawText(fntSmall, 25, 230, SDL_GetColour(white), getAmsVersion());
-
     if (loaded)
     {
-      // write the latest version number, if an update is available
-      drawText(fntSmall, 25, 260, SDL_GetColour(white), getLatestAtmosphereVersion());
 
       //drawText(fntMedium, 120, 225, SDL_GetColour(white), "Menu Here"); // menu options
       drawButton(fntButton, BUTTON_A, 970, 672, SDL_GetColour(white));
