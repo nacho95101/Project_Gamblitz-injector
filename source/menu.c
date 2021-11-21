@@ -5,7 +5,7 @@
 #include "touch.h"
 #include "util.h"
 
-#define APP_VERSION "Atmosphere Updater: 0.5.1"
+#define APP_VERSION "Plaza injector test: 0.0.1"
 
 void refreshScreen(char loaded)
 {
@@ -38,15 +38,15 @@ void printOptionList(int cursor)
 {
     refreshScreen(/*loaded=*/1);
 
-    char *option_list[]      = {    "Full Atmosphere update (recommended)", \
-                                    "Update Atmosphere (ignoring .ini files)", \
-                                    "Update Hekate (for hekate / kosmos users)", \
+    char *option_list[]      = {    "EUR Install", \
+                                    "JP Install", \
+                                    "US Install", \
                                     "Update app", \
                                     "Reboot (reboot to payload)" };
 
-    char *description_list[] = {    "Update everything for Atmosphere", \
-                                    "Update Atmosphere ignoring .ini files (if they exist)", \
-                                    "Update hekate with option to also update Atmosphere", \
+    char *description_list[] = {    "Install European version of the mod", \
+                                    "Install Japanese version of the mod", \
+                                    "Install American version of the mod", \
                                     "Update app and removes old version", \
                                     "Reboots switch (recommended after updating)" };
 
