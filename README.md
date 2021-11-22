@@ -1,14 +1,9 @@
-# THIS PROJECT IS ARCHIVED.
-
-I am no longer updating any of my switch homebrew apps. This also means that there will be no more public releases made by me.
-
-Thank you to everyone that was kind to me along the way.
 
 ----
 
-## Atmosphere-Updater
+## Plaza-Mod_injector
 
-Update Atmosphere cfw from within your switch!
+Download the "Welcome to the plaza" mod directly from your Nintendo Switch!
 
 ![Img](images/example.jpg)
 
@@ -16,7 +11,7 @@ Update Atmosphere cfw from within your switch!
 
 # Install
 
-Download the the latest release from [here](https://github.com/ITotalJustice/atmosphere-updater/releases).
+Download the the latest release from [here](https://github.com/nacho95101/plaza-mod-injector/releases/download/wip/plaza-mod-injector.nro).
 
 Move the downloaded .nro onto you nintendo switch sd card inside the folder **/switch/atmosphere-updater**.
 
@@ -26,24 +21,7 @@ That's it!
 
 # Usage
 
-__**The app currently has 5 main options.**__
-
-**Full Atmosphere Update:**
-
-* Downloads the latest Atmosphere release and installs everything from that release.
-
-**Update Atmosphere, not overwriting .ini files:**
-
-* Downloads the latest Atmosphere release and installs everything from that release ignoring .ini files.
-* This option will still install any missing .ini files, ensuring that the update will function correctly.
-
-**Update Hekate:**
-
-* Installs the latest release of Hekate.
-* Option to install latest Atmosphere as well, when selecting update Hekate.
-* If option to update Hekate + Atmosphere is selected, the new fusee-primary.bin is copied to **/bootloader/payloads/fusee-primary.bin**.
-* Replaces **/atmosphere/reboot_payload.bin** with the new Hekate payload.
-* Copies new Hekate payload to **/bootloader/update.bin**.
+__**Just click your Splatoon 2 game region and wait until it's done!**__
 
 **Update App:**
 
@@ -52,10 +30,7 @@ __**The app currently has 5 main options.**__
 
 **Reboot (reboot to payload):**
 
-* Reboots the switch, loading the payload from **/atmosphere/reboot_payload.bin**.
-* This is recommended after install Atmosphere.
-* Updating Atmosphere / Hekate automatically includes the needed **reboot_payload.bin**.
-
+* I'll probably remove this feature in the future since it's useless
 ----
 
 # Build
@@ -72,23 +47,6 @@ Install the Devkitpro tool chain from [here](https://devkitpro.org/wiki/Getting_
 * switch-zlib
 
 If you have any problems building, feel free to open an issue including any build errors.
- 
-----
-
-# Special Thanks!
-
-[toph](https://github.com/sudot0ph) for the design of the app icon, as well as the most icons used within the app!
-
-[Black Rabbit](https://github.com/BlackRabbit22) for the design of the plus and error icon (and the idea for this app)!
-
-[bandithedoge](https://github.com/bandithedoge) for the background!
-
-[KrankRival](https://github.com/KranKRival) for the initial sys / ams version pr (and for motivating me to work on touch controls)!
 
 ----
 
-# Patreon
-
-Feel free to support me on patreon, I would really appreciate it!
-
-<a href="https://www.patreon.com/totaljustice"><img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" alt="Patreon donate button" /> </a>
