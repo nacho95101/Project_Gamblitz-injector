@@ -116,17 +116,17 @@ int main(int argc, char **argv)
             {
             case UP_AMS:
                 if (yesNoBox(cursor, 390, 250, "Install EUR?") == YES)
-                    update_ams_hekate(AMS_URL, AMS_OUTPUT, cursor);
+                    update_ams_hekate(EUR_URL, AMS_OUTPUT, cursor);
                 break;
 
             case UP_AMS_NOINI:
                 if (yesNoBox(cursor, 390, 250, "Install JP?") == YES)
-                    update_ams_hekate(AMS_URL, AMS_OUTPUT, cursor);
+                    update_ams_hekate(JP_URL, AMS_OUTPUT, cursor);
                 break;
 
             case UP_HEKATE:
                 if (yesNoBox(cursor, 390, 250, "Install US?") == YES)
-                    update_ams_hekate(HEKATE_URL, HEKATE_OUTPUT, cursor);
+                    update_ams_hekate(US_URL, AMS_OUTPUT, cursor);
                 break;
 
             case UP_APP:

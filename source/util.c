@@ -8,7 +8,7 @@
 #include "download.h"
 #include "reboot_payload.h"
 
-#define TEMP_FILE                 "/switch/atmosphere-updater/temp"
+#define TEMP_FILE                 "/switch/plaza-mod-injector/temp"
 #define FILTER_STRING             "browser_download_url\":\""
 #define VERSION_FILTER_STRING     "tag_name\":\""
 
@@ -86,7 +86,7 @@ void writeLatestAtmosphereVersion()
 {
   // Download the github API file and then parse out the version number.
   char *updateString = "- Up to date";
-  if (!downloadFile(AMS_URL, TEMP_FILE, ON))
+  if (!downloadFile(EUR_URL, TEMP_FILE, ON))
   {
     char latestVersionNumber[10];
     if (!parseSearch(TEMP_FILE, VERSION_FILTER_STRING, latestVersionNumber)) {
@@ -170,13 +170,13 @@ int update_ams_hekate(char *url, char *output, int mode)
 
             if (res == YES)
             {
-                if (!update_ams_hekate(AMS_URL, AMS_OUTPUT, UP_AMS))
+                if (!update_ams_hekate(EUR_URL, AMS_OUTPUT, UP_AMS))
                     rename("/atmosphere/reboot_payload.bin", "/bootloader/payloads/fusee-primary.bin");
             }
 
             else
             {
-                if (!update_ams_hekate(AMS_URL, AMS_OUTPUT, UP_AMS_NOINI))
+                if (!update_ams_hekate(EUR_URL, AMS_OUTPUT, UP_AMS_NOINI))
                     rename("/atmosphere/reboot_payload.bin", "/bootloader/payloads/fusee-primary.bin");
             }
         }
