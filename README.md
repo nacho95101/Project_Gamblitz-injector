@@ -1,7 +1,7 @@
 
 ----
 
-## Plaza-Mod_injector
+## Project_Gamblitz-injector
 
 Download the "Welcome to the plaza" mod directly from your Nintendo Switch!
 
