@@ -156,32 +156,8 @@ int parseSearch(char *parse_string, char *filter, char* new_string)
     return 1;
 }
 
-int update_ams_hekate(char *url, char *output, int mode)
+int update_mod(char *url, char *output, int mode)
 {
-    if (mode == UP_HEKATE)
-    {
-        // ask if user wants to install atmosphere as well.
-        int res = yesNoBox(mode, 390, 250, "Update AMS and hekate?");
-
-        if (res == YES)
-        {
-            // ask if user wants to overwite the atmosphere ini files.
-            res = yesNoBox(mode, 355, 250, "Overwite Atmosphere ini files?");
-
-            if (res == YES)
-            {
-                if (!update_ams_hekate(EUR_URL, AMS_OUTPUT, UP_AMS))
-                    rename("/atmosphere/reboot_payload.bin", "/bootloader/payloads/fusee-primary.bin");
-            }
-
-            else
-            {
-                if (!update_ams_hekate(EUR_URL, AMS_OUTPUT, UP_AMS_NOINI))
-                    rename("/atmosphere/reboot_payload.bin", "/bootloader/payloads/fusee-primary.bin");
-            }
-        }
-    }
-
     if (!downloadFile(url, TEMP_FILE, ON))
     {
         char new_url[MAX_STRLEN];
@@ -190,12 +166,7 @@ int update_ams_hekate(char *url, char *output, int mode)
             if (!downloadFile(new_url, output, OFF))
             {
                 unzip(output, mode);
-
-                // check if an update.bin is present, remove if so.
-                if (mode == UP_HEKATE)
-                {
-                    copyFile("/atmosphere/reboot_payload.bin", "/bootloader/update.bin");
-                }
+                
                 return 0;
             }
             return 1;

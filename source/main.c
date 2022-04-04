@@ -27,9 +27,6 @@ int appInit()
     if (R_FAILED(rc = setsysInitialize()))                  // for system version
         printf("setsysInitialize() failed: 0x%x.\n\n", rc);
 
-    if (R_FAILED(rc = splInitialize()))                     // for atmosphere version
-        printf("splInitialize() failed: 0x%x.\n\n", rc);
-
     if (R_FAILED(rc = plInitialize(PlServiceType_User)))    // for shared fonts.
         printf("plInitialize() failed: 0x%x.\n\n", rc);
 
@@ -61,10 +58,8 @@ int main(int argc, char **argv)
 
     // write sys / ams version to char*.
     writeSysVersion();
-    writeAmsVersion();
     refreshScreen(/*loaded=*/0);
     updateRenderer();
-    writeLatestAtmosphereVersion();
 
     // set the cursor position to 0.
     short cursor = 0;
@@ -114,19 +109,19 @@ int main(int argc, char **argv)
 
             switch (cursor)
             {
-            case UP_AMS:
+            case UP_EUR:
                 if (yesNoBox(cursor, 390, 250, "Install EUR?") == YES)
-                    update_ams_hekate(EUR_URL, AMS_OUTPUT, cursor);
+                    update_mod(EUR_URL, EUR_OUTPUT, cursor);
                 break;
 
-            case UP_AMS_NOINI:
-                if (yesNoBox(cursor, 390, 250, "Install JP?") == YES)
-                    update_ams_hekate(JP_URL, AMS_OUTPUT, cursor);
-                break;
-
-            case UP_HEKATE:
+            case UP_US:
                 if (yesNoBox(cursor, 390, 250, "Install US?") == YES)
-                    update_ams_hekate(US_URL, AMS_OUTPUT, cursor);
+                    update_mod(US_URL, US_OUTPUT, cursor);
+                break;
+
+            case UP_JP:
+                if (yesNoBox(cursor, 390, 250, "Install JP?") == YES)
+                    update_mod(JP_URL, JP_OUTPUT, cursor);
                 break;
 
             case UP_APP:

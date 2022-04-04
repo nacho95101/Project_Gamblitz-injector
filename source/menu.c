@@ -31,14 +31,14 @@ void printOptionList(int cursor)
     refreshScreen(/*loaded=*/1);
 
     char *option_list[]      = {    "EUR Install", \
-                                    "JP Install", \
                                     "US Install", \
+                                    "JP Install", \
                                     "Update app", \
                                     "Reboot (reboot to payload)" };
 
     char *description_list[] = {    "Install European version of the mod", \
-                                    "Install Japanese version of the mod", \
                                     "Install American version of the mod", \
+                                    "Install Japanese version of the mod", \
                                     "Update app and removes old version", \
                                     "Reboots switch (recommended after updating)" };
 
