@@ -37,7 +37,7 @@ include $(DEVKITPRO)/libnx/switch_rules
 #   of a homebrew executable (.nro). This is intended to be used for sysmodules.
 #   NACP building is skipped as well.
 #---------------------------------------------------------------------------------
-APP_TITLE   := Plaza-Mod-Injector
+APP_TITLE   := Project Gamblitz Installer
 APP_AUTHOR  := Nacho
 APP_VERSION := 0.0.1
 

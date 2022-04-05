@@ -10,7 +10,7 @@
 #include "download.h"
 #include "reboot_payload.h"
 
-//#define DEBUG                                              // enable for nxlink debug
+#define DEBUG                                              // enable for nxlink debug
 
 int appInit()
 {

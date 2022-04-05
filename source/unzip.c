@@ -19,7 +19,7 @@ int unzip(const char *output, int mode)
     for (int i = 0; i < gi.number_entry; i++)
     {
         printOptionList(mode);
-        popUpBox(fntSmall, 350, 250, SDL_GetColour(white), "Unziping...");
+        popUpBox(fntSmall, 350, 250, SDL_GetColour(black), "Unziping...");
 
         char filename_inzip[MAXFILENAME];
         unz_file_info file_info;
@@ -27,17 +27,6 @@ int unzip(const char *output, int mode)
         unzOpenCurrentFile(zfile);
         unzGetCurrentFileInfo(zfile, &file_info, filename_inzip, sizeof(filename_inzip), NULL, 0, NULL, 0);
 
-        if (mode == UP_EUR && strstr(filename_inzip, ".ini"))
-        {
-            // check if file exists, if not, create one anyway
-            FILE *f = fopen(filename_inzip, "r");
-            if (f)
-            {
-                fclose(f);
-                goto jump_to_end;
-            }
-            fclose(f);
-        }
 
         // check if the string ends with a /, if so, then its a directory.
         if ((filename_inzip[strlen(filename_inzip) - 1]) == '/')
@@ -47,7 +36,7 @@ int unzip(const char *output, int mode)
             if (dir) closedir(dir);
             else
             {
-                drawText(fntSmall, 350, 350, SDL_GetColour(white), filename_inzip);
+                drawText(fntSmall, 350, 350, SDL_GetColour(black), filename_inzip);
                 mkdir(filename_inzip, 0777);
             }
         }
@@ -58,10 +47,9 @@ int unzip(const char *output, int mode)
             void *buf = malloc(WRITEBUFFERSIZE);
 
             FILE *outfile;
-            if (mode == UP_EUR && strstr(filename_inzip, ".bin")) outfile = fopen("/atmosphere/reboot_payload.bin", "wb");
-            else outfile = fopen(write_filename, "wb");
+            outfile = fopen(write_filename, "wb");
 
-            drawText(fntSmall, 350, 350, SDL_GetColour(white), write_filename);
+            drawText(fntSmall, 350, 350, SDL_GetColour(black), write_filename);
 
             for (int j = unzReadCurrentFile(zfile, buf, WRITEBUFFERSIZE); j > 0; j = unzReadCurrentFile(zfile, buf, WRITEBUFFERSIZE))
                 fwrite(buf, 1, j, outfile);

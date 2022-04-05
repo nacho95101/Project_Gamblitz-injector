@@ -23,15 +23,15 @@ char *getSysVersion()
     return g_sysVersion;
 }
 
-char *getAmsVersion()
-{
-    return g_amsVersion;
-}
+// char *getAmsVersion()
+// {
+    // return g_amsVersion;
+// }
 
-char *getLatestAtmosphereVersion()
-{
-    return g_latestAtmosphereVersion;
-}
+// char *getLatestAtmosphereVersion()
+// {
+    // return g_latestAtmosphereVersion;
+// }
 
 void writeSysVersion()
 {
@@ -49,7 +49,7 @@ void writeSysVersion()
     snprintf(g_sysVersion, sizeof(g_sysVersion), "Firmware Ver: %s", sysVersionBuffer);
 }
 
-void writeAmsVersion()
+/*void writeAmsVersion()
 {
 	Result ret = 0;
 	u64 ver;
@@ -99,7 +99,7 @@ void writeLatestAtmosphereVersion()
     }
   }
   snprintf(g_latestAtmosphereVersion, sizeof(g_latestAtmosphereVersion), updateString);
-}
+}*/
 
 void copyFile(char *src, char *dest)
 {
